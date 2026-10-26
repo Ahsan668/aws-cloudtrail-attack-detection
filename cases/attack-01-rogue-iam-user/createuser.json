@@ -1,0 +1,46 @@
+{
+    "eventVersion": "1.11",
+    "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAWL4M4UJYK4GIFKHK7:c408b4a8-a0a1-706e-35e3-5e2d6f56519b",
+        "arn": "arn:aws:sts::437845271152:assumed-role/AccountFullAccessRole/c408b4a8-a0a1-706e-35e3-5e2d6f56519b",
+        "accountId": "437845271152",
+        "accessKeyId": "ASIAWL4M4UJYD5MQ7GRS",
+        "sessionContext": {
+            "sessionIssuer": {
+                "type": "Role",
+                "principalId": "AROAWL4M4UJYK4GIFKHK7",
+                "arn": "arn:aws:iam::437845271152:role/managed/AccountFullAccessRole",
+                "accountId": "437845271152",
+                "userName": "AccountFullAccessRole"
+            },
+            "attributes": {
+                "creationDate": "2026-10-25T20:25:18Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2026-10-25T20:33:53Z",
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "CreateUser",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "16.178.25.21",
+    "userAgent": "aws-cli/2.38.1 ... exec-env/CloudShell ... md/command#iam.create-user",
+    "requestParameters": {
+        "userName": "backdoor-admin"
+    },
+    "responseElements": {
+        "user": {
+            "path": "/",
+            "userName": "backdoor-admin",
+            "userId": "AIDAWL4M4UJYFZMUUQGQD",
+            "arn": "arn:aws:iam::437845271152:user/backdoor-admin",
+            "createDate": "2026-10-25T20:33:53Z"
+        }
+    },
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "eventCategory": "Management",
+    "sessionCredentialFromConsole": "true"
+}

@@ -1,0 +1,252 @@
+~ $ aws sts get-caller-identity
+{
+    "UserId": "AROAWL4M4UJYK4GIFKHK7:c408b4a8-a0a1-706e-35e3-5e2d6f56519b",
+    "Account": "437845271152",
+    "Arn": "arn:aws:sts::437845271152:assumed-role/AccountFullAccessRole/c408b4a8-a0a1-706e-35e3-5e2d6f56519b"
+}
+~ $ aws iam list-users
+{
+    "Users": [
+        {
+            "Path": "/",
+            "UserName": "backdoor-admin",
+            "UserId": "AIDAWL4M4UJYFZMUUQGQD",
+            "Arn": "arn:aws:iam::437845271152:user/backdoor-admin",
+            "CreateDate": "2026-10-25T20:33:53+00:00"
+        }
+    ]
+}
+~ $ aws iam list-roles --max-items 10 --no-cli-pager
+{
+    "Roles": [
+        {
+            "Path": "/managed/",
+            "RoleName": "AccountFullAccessRole",
+            "RoleId": "AROAWL4M4UJYK4GIFKHK7",
+            "Arn": "arn:aws:iam::437845271152:role/managed/AccountFullAccessRole",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "account-access.amazonaws.com"
+                        },
+                        "Action": [
+                            "sts:AssumeRole",
+                            "sts:SetContext"
+                        ]
+                    }
+                ]
+            },
+            "MaxSessionDuration": 43200
+        },
+        {
+            "Path": "/managed/",
+            "RoleName": "AWSManagedAccountManagementAccessRole",
+            "RoleId": "AROAWL4M4UJYEAKEEDAEW",
+            "Arn": "arn:aws:iam::437845271152:role/managed/AWSManagedAccountManagementAccessRole",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::355312713211:root"
+                        },
+                        "Action": "sts:AssumeRole",
+                        "Condition": {
+                            "StringEquals": {
+                                "aws:CalledViaLast": "aws-role-management.amazonaws.com"
+                            }
+                        }
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/managed/",
+            "RoleName": "AWSManagedAdvancedFeaturesActivationRole",
+            "RoleId": "AROAWL4M4UJYPFGWRQABH",
+            "Arn": "arn:aws:iam::437845271152:role/managed/AWSManagedAdvancedFeaturesActivationRole",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "AWS": "arn:aws:iam::355312713211:root"
+                        },
+                        "Action": "sts:AssumeRole",
+                        "Condition": {
+                            "StringEquals": {
+                                "aws:CalledViaLast": "account.amazonaws.com"
+                            }
+                        }
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/notifications.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForAwsUserNotifications",
+            "RoleId": "AROAWL4M4UJYBYQE3IDM5",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/notifications.amazonaws.com/AWSServiceRoleForAwsUserNotifications",
+            "CreateDate": "2026-10-23T14:22:44+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "notifications.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/spendlimit_member.budgets.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForBudgetsSpendLimitMember",
+            "RoleId": "AROAWL4M4UJYDRM6JPCIC",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/spendlimit_member.budgets.amazonaws.com/AWSServiceRoleForBudgetsSpendLimitMember",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "spendlimit_member.budgets.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/role-manager.iam.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForIAMRoleManager",
+            "RoleId": "AROAWL4M4UJYH7ZRDSSK5",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/role-manager.iam.amazonaws.com/AWSServiceRoleForIAMRoleManager",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "role-manager.iam.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/organizations.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForOrganizations",
+            "RoleId": "AROAWL4M4UJYDENHMPU2H",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+            "CreateDate": "2026-08-26T07:50:36+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "organizations.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForResourceExplorer",
+            "RoleId": "AROAWL4M4UJYFAZUGE6QM",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+            "CreateDate": "2026-10-23T18:23:10+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "resource-explorer-2.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/support.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForSupport",
+            "RoleId": "AROAWL4M4UJYGDY3LNDN4",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+            "CreateDate": "2026-08-26T07:50:15+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "support.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+            "MaxSessionDuration": 3600
+        },
+        {
+            "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+            "RoleName": "AWSServiceRoleForTrustedAdvisor",
+            "RoleId": "AROAWL4M4UJYKIV2JS4VR",
+            "Arn": "arn:aws:iam::437845271152:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+            "CreateDate": "2026-08-26T07:50:15+00:00",
+            "AssumeRolePolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "trustedadvisor.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                    }
+                ]
+            },
+            "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+            "MaxSessionDuration": 3600
+        }
+    ]
+}
+~ $ aws iam list-attached-user-policies --user-name backdoor-admin
+{
+    "AttachedPolicies": [
+        {
+            "PolicyName": "AdministratorAccess",
+            "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+        }
+    ]
+}
+~ $ aws ec2 describe-instances --region us-east-1 --no-cli-pager
+
+aws: [ERROR]: An error occurred (UnauthorizedOperation) when calling the DescribeInstances operation: You are not authorized to perform this operation. User: arn:aws:sts::437845271152:assumed-role/AccountFullAccessRole/c408b4a8-a0a1-706e-35e3-5e2d6f56519b is not authorized to perform: ec2:DescribeInstances with an explicit deny in a service control policy: arn:aws:organizations::355312713211:policy/o-wqh0o25hm3/service_control_policy/p-txkbsa0c
+~ $ aws s3 ls
+~ $ 

@@ -1,0 +1,6 @@
+# Never commit live credentials or raw key screenshots
+*secret*
+*credentials*
+access-key*.json
+# Screenshots are kept, but ignore any file explicitly named with 'key'
+*key-visible*
