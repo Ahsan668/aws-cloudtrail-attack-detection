@@ -5,7 +5,7 @@
         "principalId": "AROAWL4M4UJYK4GIFKHK7:c408b4a8-a0a1-706e-35e3-5e2d6f56519b",
         "arn": "arn:aws:sts::437845271152:assumed-role/AccountFullAccessRole/c408b4a8-a0a1-706e-35e3-5e2d6f56519b",
         "accountId": "437845271152",
-        "accessKeyId": "ASIAWL4M4UJYB7EQTIDK",
+        "accessKeyId": "REDACTED",
         "sessionContext": {
             "sessionIssuer": {
                 "type": "Role",
