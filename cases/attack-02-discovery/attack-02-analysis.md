@@ -36,7 +36,7 @@ aws s3 ls                                 # any buckets/data?        -> empty
 
 Results confirmed: one IAM user (`backdoor-admin`, admin), full role map including two roles trusting external account `355312713211` (revealing this is an org-managed account), EC2 blocked by SCP, no S3 buckets.
 
-`[SCREENSHOT: CloudShell showing the enumeration commands and output]`
+![CloudShell: enumeration commands](screenshots/01-recon-cloudshell-1.png)
 
 ---
 
@@ -59,8 +59,9 @@ Source: **CloudTrail → Event history**, region **us-east-1**. Filter on each `
   "sessionContext": { "attributes": { "mfaAuthenticated": "false" } }
 }
 ```
-`[SCREENSHOT: CloudTrail ListUsers event — raw JSON]`
-`[SCREENSHOT: CloudTrail ListRoles event — raw JSON]`
+![CloudTrail ListUsers event](screenshots/02-listusers-event.png)
+
+![CloudTrail ListRoles event](screenshots/03-listroles-event.png)
 
 ---
 

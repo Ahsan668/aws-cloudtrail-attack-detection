@@ -32,7 +32,9 @@ aws iam attach-user-policy --user-name backdoor-admin \
 aws iam create-access-key --user-name backdoor-admin   # key redacted — deleted at teardown
 ```
 
-`[SCREENSHOT: CloudShell showing create-user + attach-user-policy output]`
+![CloudShell: create-user](screenshots/01-create-user-cloudshell.png)
+
+![CloudShell: attach-user-policy](screenshots/02-attach-user-policy.png)
 
 ---
 
@@ -58,7 +60,7 @@ Filter: `Event name = CreateUser`, then `Event name = AttachUserPolicy`.
   "sessionContext": { "attributes": { "mfaAuthenticated": "false" } }
 }
 ```
-`[SCREENSHOT: CloudTrail CreateUser event — raw JSON]`
+![CloudTrail CreateUser event](screenshots/03-createuser-event.png)
 
 ### Event 2 — AttachUserPolicy
 ```json
@@ -72,7 +74,7 @@ Filter: `Event name = CreateUser`, then `Event name = AttachUserPolicy`.
   "sessionContext": { "attributes": { "mfaAuthenticated": "false" } }
 }
 ```
-`[SCREENSHOT: CloudTrail AttachUserPolicy event — raw JSON]`
+![CloudTrail AttachUserPolicy event](screenshots/04-attach-user-policy-event.png)
 
 ---
 
